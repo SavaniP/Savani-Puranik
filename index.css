@@ -1,0 +1,226 @@
+:root {
+  --primary-red: #c0392b;
+  --primary-red-dark: #a93226;
+  --accent-green: #2ecc71;
+  --text-dark: #2c3e50;
+  --text-light: #ecf0f1;
+  --bg-light: #ffffff;
+  --bg-medium: #f8f9f9;
+  --border-color: #e0e0e0;
+
+  --font-heading: 'Roboto', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* --- Base Styles --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 2.5rem; color: var(--primary-red); }
+h3 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 3px solid var(--accent-green); padding-bottom: 0.5rem; display: inline-block; }
+
+/* --- Header --- */
+.site-header {
+  background-color: var(--bg-medium);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+.logo-svg {
+  width: 50px;
+  height: auto;
+}
+.site-header h1 {
+  color: var(--text-dark);
+}
+.tagline {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+/* --- Hero Section --- */
+#hero {
+  background-color: var(--bg-medium);
+  text-align: center;
+  padding: 4rem 0;
+}
+#hero .subtitle {
+  font-size: 1.2rem;
+  margin: 1rem auto 2rem;
+  max-width: 600px;
+}
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-red);
+  color: var(--text-light);
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-button:hover {
+  background-color: var(--primary-red-dark);
+  transform: translateY(-3px);
+}
+
+/* --- Info Sections --- */
+.content-grid {
+  display: grid;
+  gap: 3rem;
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.info-section ul {
+  list-style: none;
+}
+.info-section li {
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+.info-section li::before {
+  content: '✔';
+  color: var(--accent-green);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* --- Benefits Section --- */
+#benefits {
+  background-color: var(--bg-medium);
+  padding: 3rem 0;
+  text-align: center;
+}
+.benefits-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (min-width: 576px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.card h4 {
+  color: var(--primary-red);
+  margin-bottom: 0.5rem;
+}
+
+/* --- Details Section --- */
+#details {
+  padding: 3rem 0;
+  text-align: center;
+}
+.details-box {
+  background: var(--bg-light);
+  border: 2px dashed var(--accent-green);
+  border-radius: 8px;
+  padding: 2rem;
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+  width: 400px;
+}
+.details-box p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+#contact {
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  padding: 3rem 0;
+  text-align: center;
+}
+#contact h3 {
+  color: var(--text-light);
+  border-color: var(--primary-red);
+}
+.contact-info {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+.contact-info a {
+  color: var(--accent-green);
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.copyable {
+  cursor: pointer;
+  border-bottom: 2px dotted var(--accent-green);
+  transition: background-color 0.3s;
+}
+.copyable.copied {
+  background-color: var(--accent-green);
+  color: var(--text-dark);
+  border-bottom: 2px dotted var(--text-dark);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
